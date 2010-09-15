@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>Citasmedicas</display-name>
+    <display-name>consultoriomedico</display-name>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistroPacienteServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.RegistroPacienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaPacienteServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.ConsultaPacienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ConsultaServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.ConsultaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConsultaServlet</servlet-name>
+        <url-pattern>/ConsultaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CitaServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.CitaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HorariosServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.HorariosServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CitaServlet</servlet-name>
+        <url-pattern>/CitaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.UsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <url-pattern>/UsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RecetaServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.RecetaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecetaServlet</servlet-name>
+        <url-pattern>/RecetaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogOutServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.citasmedicas.controller.LogOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOutServlet</servlet-name>
+        <url-pattern>/LogOutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HorariosServlet</servlet-name>
+        <url-pattern>/HorariosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroPacienteServlet</servlet-name>
+        <url-pattern>/RegistroPacienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaPacienteServlet</servlet-name>
+        <url-pattern>/ConsultaPacienteServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -8,5 +80,5 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
-        </welcome-file-list>
-    </web-app>
+    </welcome-file-list>
+</web-app>
