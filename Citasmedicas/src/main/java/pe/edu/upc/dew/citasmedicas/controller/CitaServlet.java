@@ -13,6 +13,7 @@ import pe.edu.upc.dew.citasmedicas.model.Usuario;
 import pe.edu.upc.dew.citasmedicas.model.Paciente;
 import pe.edu.upc.dew.citasmedicas.model.ConsultaMedica;
 
+//Programado por Juan Carlos
 
 public class CitaServlet extends HttpServlet {
 
