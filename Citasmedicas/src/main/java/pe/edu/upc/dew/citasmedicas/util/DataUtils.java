@@ -42,7 +42,9 @@ public class DataUtils {
         //Cargar Empleados
         listaEmpleado.add(new Empleado(1, "Ana", "Perez", "Perez", "F", "A", "01/01/1980", listaUsuario.get(0), "S"));
         //Cargar Medicos
-        listaMedico.add(new Medico(1, "Carlos", "Tello", "Tello", "M", "A", "01/01/1970", listaUsuario.get(1), listaEspecialidad.get(0), "CAYETANO", "MEDICO GENERAL" ));
+        listaMedico.add(new Medico(1, "Konrad", "Lucero", "Bravo", "M", "A", "01/01/1970", listaUsuario.get(1), listaEspecialidad.get(0), "CAYETANO", "MEDICO GENERAL" ));
+        listaMedico.add(new Medico(1, "Juan", "Carlos", "Flores", "M", "A", "01/01/1970", listaUsuario.get(1), listaEspecialidad.get(0), "CAYETANO", "MEDICO GENERAL" ));
+        listaMedico.add(new Medico(1, "Jordan", "Vicaña", "Albur", "M", "A", "01/01/1970", listaUsuario.get(1), listaEspecialidad.get(0), "CAYETANO", "MEDICO GENERAL" ));
         //Cargar Horarios de Atencion
         listaHorario.add(new HorarioAtencion(1, "10:00", "11:00", listaMedico.get(0)));
         listaHorario.add(new HorarioAtencion(2, "11:00", "12:00", listaMedico.get(0)));
