@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.model.Usuario;
 
 /**
  *
- * @author cdiaz
+ * @author
  */
 public class UsuarioDaoImpl extends MainDaoImpl implements UsuarioDao {
 

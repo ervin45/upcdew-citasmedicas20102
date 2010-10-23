@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.util.DataUtils;
 
 /**
  *
- * @author Carlos
+ * @author
  */
 public class MainDaoImpl {
 

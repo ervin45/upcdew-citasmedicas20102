@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.model.Especialidad;
 
 /**
  *
- * @author cdiaz
+ * @author 
  */
 public interface EspecialidadDao {
 
