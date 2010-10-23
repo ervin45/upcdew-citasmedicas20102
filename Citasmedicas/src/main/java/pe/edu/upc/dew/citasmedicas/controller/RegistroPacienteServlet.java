@@ -18,7 +18,7 @@ import pe.edu.upc.dew.citasmedicas.model.Usuario;
 
 /**
  *
- * @author 
+ * @author Juan Carlos Flores
  */
 public class RegistroPacienteServlet extends HttpServlet {
 
