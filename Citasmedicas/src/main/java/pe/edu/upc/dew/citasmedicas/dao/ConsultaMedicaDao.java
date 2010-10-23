@@ -11,7 +11,7 @@ import pe.edu.upc.dew.citasmedicas.model.Paciente;
 
 /**
  *
- * @author cdiaz
+ * @author 
  */
 public interface ConsultaMedicaDao {
 

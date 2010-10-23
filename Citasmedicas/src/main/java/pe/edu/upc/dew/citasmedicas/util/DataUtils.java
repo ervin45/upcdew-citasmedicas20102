@@ -11,7 +11,7 @@ import pe.edu.upc.dew.citasmedicas.model.*;
 
 /**
  *
- * @author Carlos
+ * @author Juan Carlos
  */
 public class DataUtils {
 

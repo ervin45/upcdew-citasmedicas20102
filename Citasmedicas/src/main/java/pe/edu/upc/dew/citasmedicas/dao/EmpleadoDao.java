@@ -8,7 +8,7 @@ import pe.edu.upc.dew.citasmedicas.model.Empleado;
 
 /**
  *
- * @author cdiaz
+ * @author 
  */
 public interface EmpleadoDao {
 
