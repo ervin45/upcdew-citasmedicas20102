@@ -38,7 +38,7 @@ public class DataUtils {
         listaEspecialidad.add(new Especialidad(2, "Traumatologia", "A"));
         //cargar Usuarios
         listaUsuario.add(new Usuario("aperez","aperez","A",listaRol.get(ROL_EMPLEADO - 1)));
-        listaUsuario.add(new Usuario("ctello","ctello","A",listaRol.get(ROL_MEDICO - 1)));
+        listaUsuario.add(new Usuario("klucero","klucero","A",listaRol.get(ROL_MEDICO - 1)));
         //Cargar Empleados
         listaEmpleado.add(new Empleado(1, "Ana", "Perez", "Perez", "F", "A", "01/01/1980", listaUsuario.get(0), "S"));
         //Cargar Medicos
