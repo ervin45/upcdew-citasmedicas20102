@@ -1,5 +1,47 @@
 <%@ include file="/Templates/header.jsp" %>
 
+<script type='text/javascript'>
+
+    function registrar(){
+        var mensajeError = '';
+        var horario = '';
+        if(document.getElementsByName("horario").length > 0){
+            for(var i = 0 ; i< document.getElementsByName("horario").length ; i++){
+                if(document.getElementsByName("horario")[i].checked){
+                    horario = document.getElementsByName("horario")[i].value;
+                    break;
+                }
+            }
+        }
+        
+        if(horario.length==0){
+            mensajeError = "Seleccione algun horario";
+        }
+
+    <c:if test="${persona.usuario.rol.nombre != 'Paciente'}">
+                paciente = trim(document.getElementsByName("paciente")[0].value);
+                if(paciente.length==0){
+                    mensajeError = (mensajeError.length==0?'':mensajeError) +'\n' + "Seleccione algun paciente";
+                }
+    </c:if>
+
+                if(mensajeError.length>0){
+                    alert(mensajeError);
+                }else{
+                    document.getElementsByName('metodo')[0].value='registrar';
+                    document.getElementsByName('metodo')[0].form.submit();
+                }
+            }
+
+
+            function trim(stringToTrim) {
+                return stringToTrim.replace(/\ /g,'');;
+            }
+
+
+
+</script>
+
 <!-- Inicio del contenido de la Página Web -->
 <div id="content">
     <div class="post">
@@ -58,12 +100,12 @@
                                 </thead>
                                 <c:forEach var="hor" items="${horarios}"  >
 
-                                <tr>
-                                    <td><input type="radio" name="horario" value="${hor.idHorario}"> </td>
-                                    <td>${hor.horaInicio} </td>
-                                    <td>${hor.horaFin} </td>
-                                    <td>${hor.medico.nombre} </td>
-                                </tr>
+                                    <tr>
+                                        <td><input type="radio" name="horario" value="${hor.idHorario}"> </td>
+                                        <td>${hor.horaInicio} </td>
+                                        <td>${hor.horaFin} </td>
+                                        <td>${hor.medico.nombre} </td>
+                                    </tr>
                                 </c:forEach>
                             </table>
 
@@ -75,27 +117,38 @@
                         <td>&nbsp;</td>
                     </tr>
 
-                    <tr>
-                        <td>Paciente : </td>
-                        <td>
-                            <select name="paciente" id="paciente">
-                                <c:forEach var="pa" items="${pacientes}"  >
-                                    <option value="${pa.usuario.login}" >
-                                        ${pa.nombre} ${pa.apePaterno}
-                                    </option>
-                                </c:forEach>
-                            </select>
-                        </td>
-                    </tr>
+                    <c:choose>
+                        <c:when test="${persona.usuario.rol.nombre == 'Paciente'}">
+                            <input type="hidden" name="paciente" value="${persona.usuario.login}" />
+                        </c:when>
+                        <c:otherwise>
+                            <tr>
+                                <td>Paciente : </td>
+                                <td>
+
+                                    <select name="paciente" id="paciente">
+                                        <option value="">Seleccione</option>
+                                        <c:forEach var="pa" items="${pacientes}"  >
+                                            <option value="${pa.usuario.login}" >
+                                                ${pa.nombre} ${pa.apePaterno}
+                                            </option>
+                                        </c:forEach>
+                                    </select>
+                                </td>
+                            </tr>
+                        </c:otherwise>
+                    </c:choose>
+
+
 
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
 
-                     <tr>
+                    <tr>
                         <td>&nbsp;</td>
-                        <td><input type="submit" name="btnGuardar" value="registrar" onclick="document.getElementsByName('metodo')[0].value='registrar'">
+                        <td><input type="button" name="btnGuardar" value="registrar" onclick="javascript:registrar();">
                         </td>
                     </tr>
 

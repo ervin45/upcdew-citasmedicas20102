@@ -9,16 +9,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.WebApplicationContext;
 import pe.edu.upc.dew.citasmedicas.dao.PacienteDao;
 import pe.edu.upc.dew.citasmedicas.dao.UsuarioDao;
+import pe.edu.upc.dew.citasmedicas.factory.CitasMedicasFactory;
 import pe.edu.upc.dew.citasmedicas.model.Paciente;
 import pe.edu.upc.dew.citasmedicas.model.Usuario;
 
 /**
  *
- * @author Juan Carlos Flores
+ * @author 
  */
 public class RegistroPacienteServlet extends HttpServlet {
 
@@ -47,12 +46,10 @@ public class RegistroPacienteServlet extends HttpServlet {
     }
 
     PacienteDao getPacienteDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (PacienteDao) applicationContext.getBean("pacienteDao");
+        return CitasMedicasFactory.getInstance().getPacienteDao();
     }
 
     UsuarioDao getUsuarioDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (UsuarioDao) applicationContext.getBean("usuarioDao");
+        return CitasMedicasFactory.getInstance().getUsuarioDao();
     }
 }

@@ -12,6 +12,7 @@ import pe.edu.upc.dew.citasmedicas.dao.EmpleadoDao;
 import pe.edu.upc.dew.citasmedicas.dao.MedicoDao;
 import pe.edu.upc.dew.citasmedicas.dao.PacienteDao;
 import pe.edu.upc.dew.citasmedicas.dao.UsuarioDao;
+import pe.edu.upc.dew.citasmedicas.factory.CitasMedicasFactory;
 
 import pe.edu.upc.dew.citasmedicas.model.Usuario;
 import pe.edu.upc.dew.citasmedicas.util.DataUtils;
@@ -45,22 +46,18 @@ public class LoginServlet extends HttpServlet {
     }
 
     UsuarioDao getUsuarioDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (UsuarioDao) applicationContext.getBean("usuarioDao");
+        return CitasMedicasFactory.getInstance().getUsuarioDao();
     }
 
     PacienteDao getPacienteDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (PacienteDao) applicationContext.getBean("pacienteDao");
+        return CitasMedicasFactory.getInstance().getPacienteDao();
     }
 
     MedicoDao getMedicoDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (MedicoDao) applicationContext.getBean("medicoDao");
+        return CitasMedicasFactory.getInstance().getMedicoDao();
     }
 
     EmpleadoDao getEmpleadoDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (EmpleadoDao) applicationContext.getBean("empleadoDao");
+        return CitasMedicasFactory.getInstance().getEmpleadoDao();
     }
 }

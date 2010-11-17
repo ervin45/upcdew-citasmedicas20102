@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.model.Especialidad;
 
 /**
  *
- * @author 
+ * @author
  */
 public class EspecialidadDaoImpl extends MainDaoImpl implements EspecialidadDao {
 

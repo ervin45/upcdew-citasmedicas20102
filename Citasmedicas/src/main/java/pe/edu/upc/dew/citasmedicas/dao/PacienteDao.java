@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.model.Paciente;
 
 /**
  *
- * @author 
+ * @author
  */
 public interface PacienteDao {
 

@@ -12,7 +12,7 @@ import pe.edu.upc.dew.citasmedicas.model.Paciente;
 
 /**
  *
- * @author 
+ * @author
  */
 public class ConsultaMedicaDaoImpl extends MainDaoImpl implements ConsultaMedicaDao {
 

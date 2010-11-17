@@ -1,5 +1,31 @@
 <%@ include file="/Templates/header.jsp" %>
 
+<script type='text/javascript'>
+
+    function validar(){
+        var mensajeError = '';
+        diagnostico = trim(document.getElementsByName("diagnostico")[0].value);
+
+        if(diagnostico.length==0){
+            mensajeError = "Ingrese el diagnostico";
+        }
+
+        if(mensajeError.length>0){
+            alert(mensajeError);
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
+    function trim(stringToTrim) {
+        return stringToTrim.replace(/\ /g,'');;
+    }
+
+
+
+</script>
 <!-- Inicio del contenido de la Página Web -->
 <div id="content">
     <div class="post">
@@ -8,7 +34,7 @@
         <div class="entry">
             <p>Realice diagnostico.</p>
 
-            <form action="ConsultaCitaServlet" method="post">
+            <form action="ConsultaCitaServlet" method="post" onsubmit="return validar();">
                 <input type="hidden" name="metodo" value=""/>
                 <input type="hidden" name="cita" value="${cita.idConsulta}"/>
                 <table width="530px" >
