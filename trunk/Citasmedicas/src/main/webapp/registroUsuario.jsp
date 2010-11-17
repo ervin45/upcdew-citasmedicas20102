@@ -15,6 +15,72 @@
         });
     });
 </script>
+<script type='text/javascript'>
+
+    function validar(){
+        var mensajeError = '';
+        dni = trim(document.getElementsByName("documentoIdentidad")[0].value);
+        nombre = trim(document.getElementsByName("nombre")[0].value);
+        apePaterno = trim(document.getElementsByName("apePaterno")[0].value);
+        apeMaterno = trim(document.getElementsByName("apeMaterno")[0].value);
+        sexo = trim(document.getElementsByName("sexo")[0].checked?document.getElementsByName("sexo")[0].value:document.getElementsByName("sexo")[1].checked?document.getElementsByName("sexo")[1].value:'');
+        fechaNacimiento = trim(document.getElementsByName("fechaNacimiento")[0].value);
+        telefono = trim(document.getElementsByName("telefono")[0].value);
+        celular = trim(document.getElementsByName("celular")[0].value);
+        login = trim(document.getElementsByName("login")[0].value);
+        password = trim(document.getElementsByName("password")[0].value);
+
+        if(dni.length==0){
+            mensajeError = "Documento de Identidad es requerido";
+        }
+
+        if(nombre.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError )+'\n' + "Nombre es requerido";
+        }
+
+        if(apePaterno.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Apellido Paterno es requerido";
+        }
+        if(apeMaterno.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Apellido Materno es requerido";
+        }
+        if(sexo.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Sexo es requerido";
+        }
+        if(fechaNacimiento.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Fecha de Nacimiento es requerido";
+        }
+        if(telefono.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Telefono es requerido";
+        }
+        if(celular.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Celular es requerido";
+        }
+        if(login.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Login es requerido";
+        }
+        if(password.length==0){
+            mensajeError = (mensajeError.length==0?'':mensajeError)+'\n' + "Password es requerido";
+        }
+
+        if(mensajeError.length>0){
+            alert(mensajeError);
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+   
+
+    function trim(stringToTrim) {
+        return stringToTrim.replace(/\ /g,'');;
+    }
+
+
+
+</script>
+
 
 <!-- Inicio del contenido de la Página Web -->
 <div id="content">
@@ -24,7 +90,7 @@
         <div class="entry">
             <p>Ingrese sus datos en el siguiente formulario, para realizar la creaci&Oacute;n de su usuario en el sistema.</p>
 
-            <form action="RegistroPacienteServlet" method="post">
+            <form action="RegistroPacienteServlet" method="post" onsubmit="return validar()">
                 <table width="450px" >
                     <tr>
                         <td width="200">&nbsp;</td>

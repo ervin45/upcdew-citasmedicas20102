@@ -9,7 +9,7 @@ import pe.edu.upc.dew.citasmedicas.model.Medico;
 
 /**
  *
- * @author 
+ * @author
  */
 public class MedicoDaoImpl extends MainDaoImpl implements MedicoDao {
 

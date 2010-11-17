@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>consultoriomedico</display-name>
-    <context-param>
+    <!--context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/application-context.xml</param-value>
     </context-param>
@@ -9,7 +9,7 @@
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
-    </listener>
+    </listener-->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>pe.edu.upc.dew.citasmedicas.controller.LoginServlet</servlet-class>

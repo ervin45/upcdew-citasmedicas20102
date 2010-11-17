@@ -10,8 +10,10 @@ import org.springframework.web.context.WebApplicationContext;
 import pe.edu.upc.dew.citasmedicas.dao.ConsultaMedicaDao;
 import pe.edu.upc.dew.citasmedicas.dao.EspecialidadDao;
 import pe.edu.upc.dew.citasmedicas.dao.PacienteDao;
+import pe.edu.upc.dew.citasmedicas.factory.CitasMedicasFactory;
 import pe.edu.upc.dew.citasmedicas.model.HorarioAtencion;
 import pe.edu.upc.dew.citasmedicas.model.Paciente;
+import pe.edu.upc.dew.citasmedicas.model.Persona;
 
 public class RegistroCitaServlet extends HttpServlet {
 
@@ -42,22 +44,23 @@ public class RegistroCitaServlet extends HttpServlet {
         } else {
         }
         req.setAttribute("especialidades", getEspecialidadDao().obtenerEspecialidades());
-        req.setAttribute("pacientes", getPacienteDao().obtenerPacientes());
+
+        if (req.getSession().getAttribute("persona") == null || !((Persona) req.getSession().getAttribute("persona")).getUsuario().getRol().getNombre().equals("Paciente")) {
+            req.setAttribute("pacientes", getPacienteDao().obtenerPacientes());
+        }
+
         req.getRequestDispatcher("/citaRegistrar.jsp").forward(req, resp);
     }
 
     EspecialidadDao getEspecialidadDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (EspecialidadDao) applicationContext.getBean("especialidadDao");
+        return CitasMedicasFactory.getInstance().getEspecialidadDao();
     }
 
     ConsultaMedicaDao getConsultaMedicaDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (ConsultaMedicaDao) applicationContext.getBean("consultaMedicaDao");
+        return CitasMedicasFactory.getInstance().getConsultaMedicaDao();
     }
 
     PacienteDao getPacienteDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (PacienteDao) applicationContext.getBean("pacienteDao");
+        return CitasMedicasFactory.getInstance().getPacienteDao();
     }
 }

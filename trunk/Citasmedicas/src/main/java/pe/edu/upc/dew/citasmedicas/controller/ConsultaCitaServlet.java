@@ -5,9 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.WebApplicationContext;
 import pe.edu.upc.dew.citasmedicas.dao.ConsultaMedicaDao;
+import pe.edu.upc.dew.citasmedicas.factory.CitasMedicasFactory;
 import pe.edu.upc.dew.citasmedicas.model.ConsultaMedica;
 import pe.edu.upc.dew.citasmedicas.model.Medico;
 import pe.edu.upc.dew.citasmedicas.model.Paciente;
@@ -56,7 +55,6 @@ public class ConsultaCitaServlet extends HttpServlet {
     }
 
     ConsultaMedicaDao getConsultaMedicaDao() {
-        WebApplicationContext applicationContext = ContextLoader.getCurrentWebApplicationContext();
-        return (ConsultaMedicaDao) applicationContext.getBean("consultaMedicaDao");
+        return CitasMedicasFactory.getInstance().getConsultaMedicaDao();
     }
 }
