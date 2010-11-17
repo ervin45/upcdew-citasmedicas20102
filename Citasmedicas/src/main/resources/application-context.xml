@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="consultaMedicaDao" class="pe.edu.upc.dew.citasmedicas.dao.ConsultaMedicaDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="usuarioDao" class="pe.edu.upc.dew.citasmedicas.dao.UsuarioDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="pacienteDao" class="pe.edu.upc.dew.citasmedicas.dao.PacienteDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="empleadoDao" class="pe.edu.upc.dew.citasmedicas.dao.EmpleadoDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="medicoDao" class="pe.edu.upc.dew.citasmedicas.dao.MedicoDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="especialidadDao" class="pe.edu.upc.dew.citasmedicas.dao.EspecialidadDaoImpl">
+        <property name="bd" ref="bd"/>
+    </bean>
+    <bean id="bd" class="pe.edu.upc.dew.citasmedicas.util.DataUtils" init-method="cargar"/>
+    
+</beans>
