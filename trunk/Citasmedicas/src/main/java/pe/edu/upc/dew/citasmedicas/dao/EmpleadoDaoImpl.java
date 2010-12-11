@@ -28,6 +28,7 @@ public class EmpleadoDaoImpl extends MainDaoImpl implements EmpleadoDao {
                 Rol rol = new Rol();
                 rol.setIdRol(rs.getInt("idRol"));
                 rol.setNombre(rs.getString("nombreRol"));
+                usuario.setRol(rol);
                 Empleado empleado = new Empleado(rs.getInt("idPersona"), rs.getString("nombre"), rs.getString("apePaterno"), rs.getString("apeMaterno"), rs.getString("sexo"), rs.getString("telefono"), rs.getString("celular"), rs.getString("fechaNacimiento"), rs.getString("documentoIdentidad"), rs.getString("estado"), usuario, rs.getString("tipoEmpleado"));
                  return empleado;
             }
