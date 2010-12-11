@@ -17,13 +17,16 @@ import pe.edu.upc.dew.citasmedicas.factory.CitasMedicasFactory;
 import pe.edu.upc.dew.citasmedicas.model.Usuario;
 import pe.edu.upc.dew.citasmedicas.util.DataUtils;
 
+
 public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         Usuario usuario = getUsuarioDao().validarUsuario(login, password);
+        
         if (usuario == null) {
             req.getRequestDispatcher("/login.jsp").forward(req, resp);
         } else if (!usuario.getEstado().equals("A")) {
