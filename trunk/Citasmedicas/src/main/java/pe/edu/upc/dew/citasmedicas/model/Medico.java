@@ -1,6 +1,5 @@
 package pe.edu.upc.dew.citasmedicas.model;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Medico extends Persona{
@@ -23,10 +22,21 @@ public class Medico extends Persona{
         this.institucionEstudios = institucionEstudios;
         this.titulo = titulo;
     }
+
+    public Medico(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String telefono, String celular, String fechaNacimiento, String documentoIdentidad, String estado, Usuario usuario, Especialidad especialidad, String institucionEstudios, String titulo) {
+        super(idPersona, nombre, apePaterno, apeMaterno, sexo, telefono, celular, fechaNacimiento, documentoIdentidad, estado, usuario);
+
+        this.consultasMedicas = new ArrayList<ConsultaMedica>();
+    }
     
     public Medico(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo) {
         super(idPersona, nombre, apePaterno, apeMaterno, sexo);
     }
+
+    public Medico() {
+    }
+
+
 
     public List<ConsultaMedica> getConsultasMedicas() {
         return consultasMedicas;

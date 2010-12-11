@@ -19,6 +19,11 @@ public class Paciente extends Persona {
 
         this.consultasMedicas = new ArrayList<ConsultaMedica>();
     }
+    public Paciente(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String telefono, String celular, String fechaNacimiento, String documentoIdentidad, String estado, Usuario usuario) {
+        super(idPersona, nombre, apePaterno, apeMaterno, sexo, telefono, celular, fechaNacimiento, documentoIdentidad, estado, usuario);
+
+        this.consultasMedicas = new ArrayList<ConsultaMedica>();
+    }
 
     public Paciente(Persona persona) {
         super(persona.getIdPersona(), persona.getNombre(), persona.getApePaterno(), persona.getApeMaterno(), persona.getSexo());
@@ -30,6 +35,10 @@ public class Paciente extends Persona {
         this.consultasMedicas = new ArrayList<ConsultaMedica>();
     }
 
+    public Paciente() {
+        super();
+        this.consultasMedicas = new ArrayList<ConsultaMedica>();
+    }
     public String getAsegurado() {
         return asegurado;
     }

@@ -32,10 +32,11 @@ public class RegistroPacienteServlet extends HttpServlet {
         String fechaNacimiento = req.getParameter("fechaNacimiento");
         String telefono = req.getParameter("telefono");
         String celular = req.getParameter("celular");
+        String documentoIdentidad = req.getParameter("documentoIdentidad");
 
         if (getUsuarioDao().validarLogin(login) == null) {
             Usuario usuario = new Usuario(login, password, "A");
-            Paciente paciente = new Paciente(nombre, apePaterno, apeMaterno, sexo, telefono, celular, fechaNacimiento, fechaNacimiento, "A", usuario);
+            Paciente paciente = new Paciente(nombre, apePaterno, apeMaterno, sexo, telefono, celular, fechaNacimiento, documentoIdentidad, "A", usuario);
             getPacienteDao().registrarPaciente(paciente);
             req.setAttribute("mensaje", "registro de paciente exitoso");
             System.out.println("Nuevo Paciente(login=" + login + ";password=" + password + ")");
