@@ -16,6 +16,9 @@ public class Especialidad {
         this.nombre = nombre;
     }
 
+    public Especialidad() {
+    }
+
     public Integer getIdEspecialidad() {
         return idEspecialidad;
     }

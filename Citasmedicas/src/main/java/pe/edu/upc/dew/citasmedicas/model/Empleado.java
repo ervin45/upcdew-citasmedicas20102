@@ -1,6 +1,5 @@
 package pe.edu.upc.dew.citasmedicas.model;
 
-import java.util.Date;
 
 public class Empleado extends Persona {
 
@@ -17,6 +16,11 @@ public class Empleado extends Persona {
 
     public Empleado(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String estado, String fechaNacimiento, String idUsuario, String tipoEmpleado) {
         super(idPersona, nombre, apePaterno, apeMaterno, sexo, estado, fechaNacimiento, idUsuario);
+        this.tipoEmpleado = tipoEmpleado;
+    }
+
+    public Empleado(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String telefono, String celular, String fechaNacimiento, String documentoIdentidad, String estado, Usuario usuario, String tipoEmpleado) {
+        super(idPersona, nombre, apePaterno, apeMaterno, sexo, telefono, celular, fechaNacimiento, documentoIdentidad, estado, usuario);
         this.tipoEmpleado = tipoEmpleado;
     }
 

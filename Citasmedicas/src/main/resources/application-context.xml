@@ -3,25 +3,31 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
-    
+
     <bean id="consultaMedicaDao" class="pe.edu.upc.dew.citasmedicas.dao.ConsultaMedicaDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="usuarioDao" class="pe.edu.upc.dew.citasmedicas.dao.UsuarioDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="pacienteDao" class="pe.edu.upc.dew.citasmedicas.dao.PacienteDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="empleadoDao" class="pe.edu.upc.dew.citasmedicas.dao.EmpleadoDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="medicoDao" class="pe.edu.upc.dew.citasmedicas.dao.MedicoDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="especialidadDao" class="pe.edu.upc.dew.citasmedicas.dao.EspecialidadDaoImpl">
-        <property name="bd" ref="bd"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
-    <bean id="bd" class="pe.edu.upc.dew.citasmedicas.util.DataUtils" init-method="cargar"/>
-    
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
+        <property name="url" value="jdbc:derby://localhost:1527/clinicamedica"/>
+        <property name="username" value="admin"/>
+        <property name="password" value="admin"/>
+    </bean>
+    <!--bean id="bd" class="pe.edu.upc.dew.citasmedicas.util.DataUtils" init-method="cargar"/-->
+
 </beans>

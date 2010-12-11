@@ -128,8 +128,20 @@
             <artifactId>spring-web</artifactId>
             <version>3.0.2.RELEASE</version>
         </dependency>
+        <!--libreria spring para la persistencia -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>3.0.2.RELEASE</version>
+        </dependency>
 
-
+        <!--driver para conectarse a derby-->
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.6.2.1</version>
+        </dependency>
+        
     </dependencies>
     <build>
         <plugins>

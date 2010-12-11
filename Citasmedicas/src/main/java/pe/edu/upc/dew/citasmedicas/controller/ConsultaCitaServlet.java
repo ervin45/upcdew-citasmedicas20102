@@ -41,8 +41,12 @@ public class ConsultaCitaServlet extends HttpServlet {
         } else if (metodo.equals("registrar")) {
             String strCita = req.getParameter("cita");
             String diagnostico = req.getParameter("diagnostico");
-            ConsultaMedica cita = getConsultaMedicaDao().obtenerCita(Integer.parseInt(strCita));
+            ConsultaMedica cita = new ConsultaMedica();
+            cita.setIdConsulta(Integer.parseInt(strCita));
             cita.setDiagnostico(diagnostico);
+            getConsultaMedicaDao().registrarDiagnostico(cita);
+//            ConsultaMedica cita = getConsultaMedicaDao().obtenerCita(Integer.parseInt(strCita));
+//            cita.setDiagnostico(diagnostico);
             System.out.println("Se registro diagnostico:cita=" + cita.getIdConsulta());
             req.getRequestDispatcher("/home.jsp").forward(req, resp);
         } else if (metodo.equals("ver")) {

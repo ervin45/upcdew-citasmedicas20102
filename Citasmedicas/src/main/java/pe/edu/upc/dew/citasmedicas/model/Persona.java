@@ -17,6 +17,9 @@ public abstract class Persona {
     private String idUsuario;
     private Usuario usuario;
 
+    public Persona() {
+    }
+
     public Persona(String nombre, String apePaterno, String apeMaterno, String sexo, String estado, String fechaNacimiento, Usuario usuario) {
         this.nombre = nombre;
         this.apePaterno = apePaterno;
@@ -40,7 +43,19 @@ public abstract class Persona {
         this.usuario = usuario;
     }
 
-    
+    public Persona(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String telefono, String celular, String fechaNacimiento, String documentoIdentidad, String estado, Usuario usuario) {
+        this.idPersona = idPersona;
+        this.nombre = nombre;
+        this.apePaterno = apePaterno;
+        this.apeMaterno = apeMaterno;
+        this.sexo = sexo;
+        this.telefono = telefono;
+        this.celular = celular;
+        this.fechaNacimiento = fechaNacimiento;
+        this.documentoIdentidad = documentoIdentidad;
+        this.estado = estado;
+        this.usuario = usuario;
+    }
 
     public Persona(String nombre, String apePaterno, String apeMaterno, String sexo, String estado, String fechaNacimiento, String idUsuario) {
         this.nombre = nombre;
@@ -51,7 +66,7 @@ public abstract class Persona {
         this.estado = estado;
         this.idUsuario = idUsuario;
     }
-    
+
     public Persona(Integer idPersona, String nombre, String apePaterno, String apeMaterno, String sexo, String estado, String fechaNacimiento, String idUsuario) {
         this.idPersona = idPersona;
         this.nombre = nombre;

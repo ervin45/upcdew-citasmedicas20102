@@ -5,7 +5,9 @@
 
 package pe.edu.upc.dew.citasmedicas.dao;
 
-import pe.edu.upc.dew.citasmedicas.util.DataUtils;
+import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 
 /**
  *
@@ -13,10 +15,11 @@ import pe.edu.upc.dew.citasmedicas.util.DataUtils;
  */
 public class MainDaoImpl {
 
-    protected DataUtils bd;
+    protected JdbcTemplate jdbcTemplate;
 
-    public void setBd(DataUtils bd) {
-        this.bd = bd;
+    public void setDataSource(DataSource ds) {
+        jdbcTemplate = new JdbcTemplate(ds);
     }
+
 
 }
